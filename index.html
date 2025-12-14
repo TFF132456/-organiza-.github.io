@@ -1,4 +1,3 @@
-<!-- 作者涂凤飞-->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -10,26 +9,25 @@
 <body>
     <div class="container">
         <h1>👗 AI虚拟试衣间</h1>
+        
+        <!-- 在subtitle后面添加新行 -->
         <p class="subtitle">上传人脸和衣服，AI自动生成试穿效果</p >
-        <p class="subtitle">当前为演示版本，仅作参考无任何实际功能，网站作者拥有最终解释权。</p >
-
-        <!-- 人脸上传 -->
+        <p class="notice">当前为演示版本，仅作参考无任何实际功能</p > <!-- 新增行 -->
+        
         <div class="upload-section">
             <h3>1. 上传您的人脸照片</h3>
             <input type="file" id="faceInput" accept="image/*">
             <label for="faceInput" class="upload-btn">📸 选择人脸照片</label>
             <div id="facePreview"></div>
         </div>
-
-        <!-- 服装上传 -->
+        
         <div class="upload-section">
             <h3>2. 上传衣服图片</h3>
             <input type="file" id="clothingInput" accept="image/*">
             <label for="clothingInput" class="upload-btn">👔 选择衣服照片</label>
             <div id="clothingPreview"></div>
         </div>
-
-        <!-- 生成选项 -->
+        
         <div class="options">
             <h3>3. 选择生成模式</h3>
             <div class="mode-selector">
@@ -37,17 +35,17 @@
                 <button class="mode-btn" data-mode="fullbody">全身合成</button>
             </div>
         </div>
-
+        
         <button id="generateBtn" class="generate-btn">✨ 生成效果</button>
         
         <div id="loading" class="loading hidden">
             <div class="spinner"></div>
-            <p id="loadingText">AI正在生成中...约20秒</p >
+            <p id="loadingText">AI正在生成中...</p >
         </div>
-
+        
         <div id="result" class="result-area"></div>
     </div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
