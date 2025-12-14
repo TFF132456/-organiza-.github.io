@@ -54,8 +54,17 @@ h1 {
 .subtitle {
     text-align: center;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 1.1rem;
+}
+
+/* 新增的通知提示样式 */
+.notice {
+    text-align: center;
+    color: #e74c3c; /* 红色警示 */
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 /* ========================================
@@ -63,11 +72,6 @@ h1 {
 ======================================== */
 .upload-section {
     margin-bottom: 25px;
-}
-
-.upload-area {
-    text-align: center;
-    margin-bottom: 30px;
 }
 
 /* 隐藏原生文件输入框 */
@@ -107,8 +111,12 @@ h1 {
 }
 
 /* ========================================
-   模板选择样式
+   模板和模式选择样式
 ======================================== */
+.options {
+    margin: 25px 0;
+}
+
 .template-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -137,7 +145,6 @@ h1 {
     border-color: #667eea;
 }
 
-/* 模式选择器 */
 .mode-selector {
     display: flex;
     gap: 15px;
@@ -240,7 +247,6 @@ h1 {
     margin: 20px 0;
 }
 
-/* 下载按钮 */
 .download-btn {
     display: inline-block;
     padding: 12px 25px;
@@ -286,20 +292,19 @@ h1 {
         font-size: 2rem;
     }
 
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .notice {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
     /* 上传按钮全宽度 */
     .upload-btn {
         width: 100%;
         text-align: center;
-    }
-
-    /* 模板网格单列显示 */
-    .template-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* 模式选择器垂直排列 */
-    .mode-selector {
-        flex-direction: column;
     }
 
     /* 预览图片适应 */
@@ -332,8 +337,8 @@ h1 {
         font-size: 1.5rem;
     }
 
-    .subtitle {
-        font-size: 1rem;
+    .subtitle, .notice {
+        font-size: 0.9rem;
     }
 
     .generate-btn {
