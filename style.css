@@ -1,3 +1,18 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* 科技蓝紫渐变背景 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 /* 在之前基础上添加 */
 .upload-section {
     margin-bottom: 25px;
@@ -29,4 +44,59 @@
     max-width: 150px;
     max-height: 150px;
     margin-top: 15px;
+}
+/* 主容器玻璃拟态效果 */
+.container {
+    /* 原来样式基础上添加 */
+    background: rgba(255, 255, 255, 0.95); /* 半透明白色 */
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    -webkit-backdrop-filter: blur(10px); /* Safari兼容 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* 上传按钮增强 */
+.upload-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* 生成按钮发光效果 */
+.generate-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.generate-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(rgba(255,255,255,0.1), transparent);
+    transform: rotate(30deg);
+    transition: all 0.6s;
+}
+
+.generate-btn:hover::after {
+    transform: translateY(100%) rotate(30deg);
+}
+/* 移动端适配 */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* 解决iOS fixed背景问题 */
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 25px 20px;
+        margin: 10px;
+    }
+    
+    body::before {
+        background: rgba(0, 0, 0, 0.5); /* 移动端加深遮罩 */
+    }
 }
