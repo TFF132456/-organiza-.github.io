@@ -3,45 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI人像合成演示</title>
+    <title>AI虚拟试衣演示</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎨 AI人像合成演示</h1>
-        <p class="subtitle">上传人脸照片，AI自动生成全身形象</p >
+        <h1>👗 AI虚拟试衣间</h1>
+        <p class="subtitle">上传人脸和衣服，AI自动生成试穿效果</p >
 
-        <div class="upload-area">
+        <!-- 人脸上传 -->
+        <div class="upload-section">
+            <h3>1. 上传您的人脸照片</h3>
             <input type="file" id="faceInput" accept="image/*">
-            <label for="faceInput" class="upload-btn">
-                📸 上传人脸照片
-            </label>
+            <label for="faceInput" class="upload-btn">📸 选择人脸照片</label>
             <div id="facePreview"></div>
         </div>
 
+        <!-- 服装上传 -->
+        <div class="upload-section">
+            <h3>2. 上传衣服图片</h3>
+            <input type="file" id="clothingInput" accept="image/*">
+            <label for="clothingInput" class="upload-btn">👔 选择衣服照片</label>
+            <div id="clothingPreview"></div>
+        </div>
+
+        <!-- 生成选项 -->
         <div class="options">
-            <h3>选择风格模板</h3>
-            <div class="template-grid">
-                <button class="template-btn active" data-prompt="professional business suit, studio lighting">
-                    👔 商务正装
-                </button>
-                <button class="template-btn" data-prompt="casual t-shirt and jeans, outdoor natural light">
-                    👕 休闲日常
-                </button>
-                <button class="template-btn" data-prompt="elegant evening dress, soft lighting">
-                    👗 优雅晚礼服
-                </button>
-                <button class="template-btn" data-prompt="sportswear, dynamic pose, gym environment">
-                    🏃 运动风格
-                </button>
+            <h3>3. 选择生成模式</h3>
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="tryon">虚拟试衣</button>
+                <button class="mode-btn" data-mode="fullbody">全身合成</button>
             </div>
         </div>
 
-        <button id="generateBtn" class="generate-btn">🚀 生成全身像</button>
+        <button id="generateBtn" class="generate-btn">✨ 生成效果</button>
         
         <div id="loading" class="loading hidden">
             <div class="spinner"></div>
-            <p>AI正在生成中...约15秒</p >
+            <p id="loadingText">AI正在生成中...约20秒</p >
         </div>
 
         <div id="result" class="result-area"></div>
